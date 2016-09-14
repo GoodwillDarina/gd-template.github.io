@@ -1,0 +1,30 @@
+{
+  "name": "template_projects",
+  "version": "1.0.0",
+  "description": "Template for web-projects",
+  "main": "gulpfile.js",
+  "author": "Goodwill Darina",
+  "license": "ISC",
+  "prefix": "source",
+  "devDependencies": {
+    "browser-sync": "^2.2.3",
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "nib": "^1.1.0",
+    "path": "^0.12.7",
+    "stylus": "^0.54.2",
+    "stylus-type-utils": "0.0.3"
+  },
+  "dependencies": {
+    "normalize.css": "^4.2.0",
+    "jquery": "^3.1.0"
+  }
+}
