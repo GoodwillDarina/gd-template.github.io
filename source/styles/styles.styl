@@ -1,18 +1,32 @@
 @require "common/variables";
 @require "common/mixins";
+@require "common/*";
 
 html, body {
   size: 100%;
   box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
-.welcome-block {
-  text-align: center;
-  width: 600px;
-  margin: 20px auto;
+main {
+  display: block;
+  padding: 15px 0;
 }
 
-.welcome-block__img {
-  width: 350px;
+.container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1240px;
+  width: 100%;
+  padding: 0 20px;
+  margin: auto;
 }
 
+@require "components/*";
