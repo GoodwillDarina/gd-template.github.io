@@ -34,7 +34,7 @@ gulp.task('default', ['build']);
 function startServer() {
     browserSync({
         server: {
-            baseDir: "./app"
+            baseDir: "./build"
         },
         host: 'localhost',
         port: 9009
@@ -42,14 +42,14 @@ function startServer() {
 }
 
 function clean() {
-    del.sync(['./app']);
+    del.sync(['./build']);
     console.log('[--------] App folder was deleted');
 }
 
 function copyIndex() {
     return gulp.src('./source/index.html')
         .pipe(rigger())
-        .pipe(gulp.dest('./app'))
+        .pipe(gulp.dest('./build'))
         .pipe(reload({stream: true}));
 }
 
@@ -59,7 +59,7 @@ function compileJs() {
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./app'))
+        .pipe(gulp.dest('./build'))
 }
 
 function compileStylus() {
@@ -72,17 +72,17 @@ function compileStylus() {
             'include css': true
         }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./app/styles'))
+        .pipe(gulp.dest('./build/styles'))
 }
 
 function copyImages() {
     return gulp.src('./source/images/**/*.*')
-        .pipe(gulp.dest('./app/images'));
+        .pipe(gulp.dest('./build/images'));
 }
 
 function copyFonts() {
     return gulp.src('./source/fonts/**/*.*')
-        .pipe(gulp.dest('./app/fonts'));
+        .pipe(gulp.dest('./build/fonts'));
 }
 
 function copyLibraries() {
@@ -91,15 +91,15 @@ function copyLibraries() {
         './node_modules/normalize.css/normalize.css',
         './source/libs/**/*.js'
     ])
-        .pipe(gulp.dest('./app/libs/'));
+        .pipe(gulp.dest('./build/libs/'));
 }
 
 function cleanCss() {
-    del.sync(['./app/styles/**']);
+    del.sync(['./build/styles/**']);
 }
 
 function cleanJs() {
-    del.sync(['./app/app.*']);
+    del.sync(['./build/app.*']);
 }
 
 function watch() {

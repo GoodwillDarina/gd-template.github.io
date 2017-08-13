@@ -2,6 +2,13 @@
   "name": "template_projects",
   "version": "1.0.0",
   "description": "Template for web-projects",
+  "scripts": {
+     "start": "gulp server:watch",
+     "build": "gulp build",
+     "clean": "rm -rf build/* bundle.tar.gz",
+     "tar": "tar -czf bundle.tar.gz build",
+     "package": "npm run clean && npm run build && npm run tar"
+   },
   "main": "gulpfile.js",
   "author": "Goodwill Darina",
   "license": "ISC",
